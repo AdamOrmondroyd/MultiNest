@@ -8,7 +8,7 @@ all: loggamma
 %.o: %.f90
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
  
-eggbox: $(OBJFILES)
+loggamma: $(OBJFILES)
 	$(FC) -o ../loggamma $(OBJFILES) \
 	$(FFLAGS) $(LIBS)
 

@@ -9,7 +9,7 @@ all: eggboxC
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(HEADERDIR) -c $*.c
  
-eggbox: $(OBJFILES)
+eggboxC: $(OBJFILES)
 	$(FC) $(FFLAGS) $(NOFORMAIN) -o ../eggboxC $(OBJFILES) $(LIBS)
 
 clean:

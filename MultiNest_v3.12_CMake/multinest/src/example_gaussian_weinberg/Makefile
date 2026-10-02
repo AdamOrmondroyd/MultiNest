@@ -8,7 +8,7 @@ all: gaussian_weinberg
 %.o: %.f90
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
  
-eggbox: $(OBJFILES)
+gaussian_weinberg: $(OBJFILES)
 	$(FC) -o ../gaussian_weinberg $(OBJFILES) \
 	$(FFLAGS) $(LIBS)
 
