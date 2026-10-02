@@ -186,10 +186,13 @@ INSTALL(DIRECTORY
 # Now with the libraries specified, build all of the executables:
 # ============================
 ADD_SUBDIRECTORY(example_ackley)
+ADD_SUBDIRECTORY(example_eggbox)
 ADD_SUBDIRECTORY(example_eggbox_C)
 ADD_SUBDIRECTORY(example_eggbox_C++)
 ADD_SUBDIRECTORY(example_gaussian)
 ADD_SUBDIRECTORY(example_gauss_shell)
+ADD_SUBDIRECTORY(example_gaussian_weinberg)
 ADD_SUBDIRECTORY(example_himmelblau)
+ADD_SUBDIRECTORY(example_loggamma)
 ADD_SUBDIRECTORY(example_obj_detect)
 ADD_SUBDIRECTORY(example_rosenbrock)
