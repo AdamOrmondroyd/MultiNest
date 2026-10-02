@@ -36,7 +36,7 @@ NSOBJECTS = utils.o utils1.o priors.o kmeans_clstr.o xmeans_clstr.o posterior.o 
 default: libnest3.a
 
 all: libnest3.a obj_detect eggbox eggboxC eggboxC++ gaussian gaussian_weinberg \
-loggamma gauss_shell rosenbrock himmelblau ackley example_gaussian_weinberg
+loggamma gauss_shell rosenbrock himmelblau ackley
  
 libnest3.so: $(NSOBJECTS) 
 	$(LINKLIB) -o $(LIBS) $@ $^ 
