@@ -10,6 +10,9 @@ CXX = g++
 FFLAGS += -ffree-line-length-none -O3 -DMPI
 CFLAGS += -O3 -DMPI
 
+# gfortran >= 10 errors on argument rank mismatches in MPI calls
+FFLAGS += $(shell [ $$($(FC) -dumpversion) -ge 10 ] && echo -fallow-argument-mismatch)
+
 LAPACKLIB = -llapack
 
 NESTLIBDIR = ./
