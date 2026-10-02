@@ -3,6 +3,8 @@
 #CXX = icpc -lmpi
 #FFLAGS += -O3 -DMPI
 #CFLAGS += -O3 -DMPI
+## newer intel compilers spell this -nofor-main
+#NOFORMAIN = -nofor_main
 
 FC = mpif90
 CC = gcc
@@ -17,7 +19,7 @@ LAPACKLIB = -llapack
 
 NESTLIBDIR = ./
 
-export FC CC CXX FFLAGS CFLAGS LAPACKLIB
+export FC CC CXX FFLAGS CFLAGS LAPACKLIB NOFORMAIN
 
  
 AR = ar r  

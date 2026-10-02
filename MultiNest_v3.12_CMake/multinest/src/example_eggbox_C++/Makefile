@@ -10,7 +10,7 @@ all: eggbox
 	$(CXX) $(CFLAGS) -I$(HEADERDIR) -c $*.cc
  
 eggbox: $(OBJFILES)
-	$(FC) $(FFLAGS) -nofor_main -o ../eggboxC++ $(OBJFILES) $(LIBS)
+	$(FC) $(FFLAGS) $(NOFORMAIN) -o ../eggboxC++ $(OBJFILES) $(LIBS)
 
 clean:
 	rm -f *.o *.mod ../eggboxC++
