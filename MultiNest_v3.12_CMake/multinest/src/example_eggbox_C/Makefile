@@ -4,7 +4,7 @@ HEADERDIR = ../../include
  
 OBJFILES = eggbox.o
 
-all: eggbox 
+all: eggboxC
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(HEADERDIR) -c $*.c
