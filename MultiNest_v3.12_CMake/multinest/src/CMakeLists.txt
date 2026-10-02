@@ -49,9 +49,6 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
  endif()
 endif()
 
-# Enable optimization.
-#LIST(APPEND CMAKE_Fortran_FLAGS "-O3")
-
 # ============================
 # Collect the source:
 # ============================

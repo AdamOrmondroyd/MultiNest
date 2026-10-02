@@ -8,6 +8,12 @@ project(multinest Fortran C CXX)
 # or by uncommenting and modifying this variable:
 #SET(CMAKE_INSTALL_PREFIX /usr/local/multinest)
 
+# Default to an optimised (Release, -O3) build. Override with e.g.
+#  cmake -DCMAKE_BUILD_TYPE=Debug ..
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+    set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+endif()
+
 #=============================================================================
 # All done editing
 SET(MultiNest_VERSION "3.11")
