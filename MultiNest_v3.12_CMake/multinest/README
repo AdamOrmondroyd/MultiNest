@@ -22,6 +22,21 @@ if they are not found.
 
 ---------------------------------------------------------------------------
 
+MPI Support:
+
+The code is MPI compatible. In order to disable the MPI parallelization, remove -DMPI compilation flag.
+
+---------------------------------------------------------------------------
+
+gfortran compiler:
+
+You might need to use the following flag while compiling MultiNest with gfortran compiler to remove the
+restriction imposed by gfortran on line length.
+
+-ffree-line-length-none
+
+---------------------------------------------------------------------------
+
 Building and installing MultiNest CMake version:
 
 Brian Kloppenborg has provided a CMake building environment which automatically 
@@ -76,6 +91,44 @@ CMake, try specifying the absolute path to the library using the
 CMAKE_PREFIX_PATH when first invoking CMake:
 
 $ cmake -DCMAKE_PREFIX_PATH=/non/standard/directory ..
+
+---------------------------------------------------------------------------
+
+Building MultiNest with make:
+
+MultiNest can also be built without CMake, using the Makefile in src. The
+compilers (FC, CC, CXX), compilation flags (FFLAGS, CFLAGS) and lapack library
+(LAPACKLIB) are set at the top of src/Makefile. By default MultiNest is built
+with MPI using mpif90; to build without MPI, set FC to a plain Fortran compiler
+(e.g. gfortran) and remove the -DMPI flag (see MPI Support above). Commented-out
+settings for the Intel compilers are also provided.
+
+The static library libnest3.a is built in src by:
+
+$ cd src
+$ make
+
+An example program is built with its name, e.g.
+
+$ make gaussian
+
+or all of the examples with
+
+$ make all
+
+The example programs are placed in bin, and should be run from there as they
+write their output files to bin/chains:
+
+$ cd ../bin
+$ ./gaussian
+
+To remove the library and object files from src:
+
+$ make clean
+
+or to also remove the example programs:
+
+$ make cleanall
 
 ---------------------------------------------------------------------------
 
