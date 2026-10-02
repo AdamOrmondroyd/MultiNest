@@ -80,13 +80,10 @@ eggboxC++:
 clean: 
 	-rm $(NESTLIBDIR)/libnest3.*  *.o *.mod
 	
-cleanall: clean_exec clean clean_obj_detect clean_gaussian clean_gaussian_weinberg \
-clean_loggamma clean_gauss_shell clean_eggbox clean_example_eggbox_C clean_example_eggbox_C++ \
+cleanall: clean clean_obj_detect clean_gaussian clean_gaussian_weinberg \
+clean_loggamma clean_gauss_shell clean_eggbox clean_eggbox_C clean_eggbox_C++ \
 clean_rosenbrock clean_himmelblau \
 clean_ackley
-
-clean_exec:
-	-rm obj_detect gaussian gaussian_weinberg loggamma rosenbrock ackley himmelblau gauss_shell eggbox eggboxC eggboxC++
 
 clean_obj_detect:
 	make -C example_obj_detect clean
@@ -115,8 +112,8 @@ clean_eggbox:
 clean_gauss_shell:
 	make -C example_gauss_shell clean
 	
-clean_example_eggbox_C:
+clean_eggbox_C:
 	make -C example_eggbox_C clean
 	
-clean_example_eggbox_C++:
+clean_eggbox_C++:
 	make -C example_eggbox_C++ clean
