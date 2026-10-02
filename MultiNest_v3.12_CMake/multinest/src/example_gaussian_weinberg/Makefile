@@ -3,7 +3,7 @@ LIBS = -L$(NESTLIBDIR) -lnest3 $(LAPACKLIB)
  
 OBJFILES = params.o like.o nestwrap.o main.o
 
-all: eggbox 
+all: gaussian_weinberg 
 
 %.o: %.f90
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
