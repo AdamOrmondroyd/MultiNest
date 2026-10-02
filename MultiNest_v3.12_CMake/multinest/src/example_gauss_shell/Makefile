@@ -9,8 +9,8 @@ all: gauss_shell
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
  
 gauss_shell: $(OBJFILES)
-	$(FC) -o ../gauss_shell $(OBJFILES) \
+	$(FC) -o ../../bin/gauss_shell $(OBJFILES) \
 	$(FFLAGS) $(LIBS)
 
 clean:
-	rm -f *.o *.mod ../gauss_shell
+	rm -f *.o *.mod ../../bin/gauss_shell

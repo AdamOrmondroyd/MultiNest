@@ -9,8 +9,8 @@ all: eggbox
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
  
 eggbox: $(OBJFILES)
-	$(FC) -o ../eggbox $(OBJFILES) \
+	$(FC) -o ../../bin/eggbox $(OBJFILES) \
 	$(FFLAGS) $(LIBS)
 
 clean:
-	rm -f *.o *.mod ../eggbox
+	rm -f *.o *.mod ../../bin/eggbox

@@ -9,8 +9,8 @@ all: gaussian_weinberg
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
  
 gaussian_weinberg: $(OBJFILES)
-	$(FC) -o ../gaussian_weinberg $(OBJFILES) \
+	$(FC) -o ../../bin/gaussian_weinberg $(OBJFILES) \
 	$(FFLAGS) $(LIBS)
 
 clean:
-	rm -f *.o *.mod ../gaussian_weinberg
+	rm -f *.o *.mod ../../bin/gaussian_weinberg

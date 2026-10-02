@@ -9,8 +9,8 @@ all: loggamma
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
  
 loggamma: $(OBJFILES)
-	$(FC) -o ../loggamma $(OBJFILES) \
+	$(FC) -o ../../bin/loggamma $(OBJFILES) \
 	$(FFLAGS) $(LIBS)
 
 clean:
-	rm -f *.o *.mod ../loggamma
+	rm -f *.o *.mod ../../bin/loggamma

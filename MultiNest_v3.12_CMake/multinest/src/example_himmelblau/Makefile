@@ -9,8 +9,8 @@ all: himmelblau
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
  
 himmelblau: $(OBJFILES)
-	$(FC) -o ../himmelblau $(OBJFILES) \
+	$(FC) -o ../../bin/himmelblau $(OBJFILES) \
 	$(FFLAGS) $(LIBS)
 
 clean:
-	rm -f *.o *.mod ../himmelblau
+	rm -f *.o *.mod ../../bin/himmelblau

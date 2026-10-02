@@ -9,8 +9,8 @@ all: gaussian
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
  
 gaussian: $(OBJFILES)
-	$(FC) -o ../gaussian $(OBJFILES) \
+	$(FC) -o ../../bin/gaussian $(OBJFILES) \
 	$(FFLAGS) $(LIBS)
 
 clean:
-	rm -f *.o *.mod ../gaussian
+	rm -f *.o *.mod ../../bin/gaussian

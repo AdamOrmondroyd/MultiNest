@@ -9,8 +9,8 @@ all: ackley
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
  
 ackley: $(OBJFILES)
-	$(FC) -o ../ackley $(OBJFILES) \
+	$(FC) -o ../../bin/ackley $(OBJFILES) \
 	$(FFLAGS) $(LIBS)
 
 clean:
-	rm -f *.o *.mod ../ackley
+	rm -f *.o *.mod ../../bin/ackley

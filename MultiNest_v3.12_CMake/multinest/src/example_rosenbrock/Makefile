@@ -9,8 +9,8 @@ all: rosenbrock
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
  
 rosenbrock: $(OBJFILES)
-	$(FC) -o ../rosenbrock $(OBJFILES) \
+	$(FC) -o ../../bin/rosenbrock $(OBJFILES) \
 	$(FFLAGS) $(LIBS)
 
 clean:
-	rm -f *.o *.mod ../rosenbrock
+	rm -f *.o *.mod ../../bin/rosenbrock

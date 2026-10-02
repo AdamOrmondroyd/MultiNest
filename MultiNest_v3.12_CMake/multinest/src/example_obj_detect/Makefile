@@ -9,8 +9,8 @@ all: obj_detect
 	$(FC) $(FFLAGS) -I$(NESTLIBDIR) -c $*.f90
  
 obj_detect: $(OBJFILES)
-	$(FC) -o ../obj_detect $(OBJFILES) \
+	$(FC) -o ../../bin/obj_detect $(OBJFILES) \
 	$(FFLAGS) $(LIBS)
 
 clean:
-	rm -f *.o *.mod ../obj_detect
+	rm -f *.o *.mod ../../bin/obj_detect

@@ -33,6 +33,13 @@ NSOBJECTS = utils.o utils1.o priors.o kmeans_clstr.o xmeans_clstr.o posterior.o 
 %.o: %.F90
 	$(FC) $(FFLAGS) -c -o $@ $^ 
 
+.PHONY: default all clean cleanall \
+      obj_detect gaussian gaussian_weinberg loggamma rosenbrock ackley \
+      himmelblau eggbox gauss_shell eggboxC eggboxC++ \
+      clean_obj_detect clean_gaussian clean_gaussian_weinberg clean_loggamma \
+      clean_rosenbrock clean_ackley clean_himmelblau clean_eggbox \
+      clean_gauss_shell clean_eggbox_C clean_eggbox_C++
+
 default: libnest3.a
 
 all: libnest3.a obj_detect eggbox eggboxC eggboxC++ gaussian gaussian_weinberg \
