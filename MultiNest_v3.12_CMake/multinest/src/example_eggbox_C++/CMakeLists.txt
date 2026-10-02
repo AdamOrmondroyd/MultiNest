@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8) 
+cmake_minimum_required(VERSION 3.10) 
 
 # In a normal application you would do:
 # FIND_LIBRARY(MultiNest)
