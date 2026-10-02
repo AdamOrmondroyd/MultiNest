@@ -51,37 +51,37 @@ libnest3.so: $(NSOBJECTS)
 libnest3.a: $(NSOBJECTS) 
 	$(AR) $@ $^ 
  
-obj_detect:
+obj_detect: libnest3.a
 	make -C example_obj_detect
  
-gaussian:
+gaussian: libnest3.a
 	make -C example_gaussian
  
-gaussian_weinberg:
+gaussian_weinberg: libnest3.a
 	make -C example_gaussian_weinberg
  
-loggamma:
+loggamma: libnest3.a
 	make -C example_loggamma
  
-rosenbrock:
+rosenbrock: libnest3.a
 	make -C example_rosenbrock
  
-ackley:
+ackley: libnest3.a
 	make -C example_ackley
  
-himmelblau:
+himmelblau: libnest3.a
 	make -C example_himmelblau
  
-eggbox:
+eggbox: libnest3.a
 	make -C example_eggbox
  
-gauss_shell:
+gauss_shell: libnest3.a
 	make -C example_gauss_shell
 	
-eggboxC:
+eggboxC: libnest3.a
 	make -C example_eggbox_C
 	
-eggboxC++:
+eggboxC++: libnest3.a
 	make -C example_eggbox_C++
 
 clean: 
