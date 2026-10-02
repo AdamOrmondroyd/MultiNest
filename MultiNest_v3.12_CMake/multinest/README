@@ -24,7 +24,7 @@ if they are not found.
 
 Building and installing MultiNest CMake version:
 
-Brian Kloppenborg has provided a CMake building enviornment which automatically 
+Brian Kloppenborg has provided a CMake building environment which automatically 
 builds MultiNest as both static and shared libraries with MPI enabled and 
 disabled. The script will automatically detect lapack and any compiler quirks 
 that needed to be manually configured in previous version of MultiNest.
