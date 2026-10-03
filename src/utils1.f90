@@ -751,28 +751,6 @@ contains
   END FUNCTION gammp
   
   
-  !USES gcf,gser Returns the incomplete gamma function Q(a,x)=1-P(a,x). 
-  FUNCTION gammq(a,x) 
-  	REAL a,gammq,x 
-      REAL gammcf,gamser,gln 
-      
-      if(x.lt.0..or.a.le.0.) then
-      	write(*,*) 'bad arguments in gammq'
-	stop
-      endif
-      if(x.lt.a+1.)then 
-      	!Use the series representation 
-      	call gser(gamser,a,x,gln) 
-            gammq=1.-gamser !and take its complement. 
-      else 
-      	!Use the continued fraction representation. 
-            call gcf(gammcf,a,x,gln) 
-            gammq=gammcf 
-	endif 
-      return 
-  END FUNCTION gammq
-  
-  
   !USES gammln Returns the incomplete gamma function P(a,x) evaluated by its series 
   !representation as gamser. 
   !Also returns ln (a) as gln. 
