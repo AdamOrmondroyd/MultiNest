@@ -66,7 +66,7 @@ implicit none
       
       	!max modes expected, for memory allocation
       	integer nest_maxModes 
-      	parameter(nest_maxModes=10)
+      	parameter(nest_maxModes=100)
       
       	!no. of parameters to cluster (for mode detection)
       	integer nest_nClsPar
