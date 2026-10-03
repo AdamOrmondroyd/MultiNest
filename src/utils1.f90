@@ -294,25 +294,6 @@ contains
 
 !----------------------------------------------------------------------   
   
-  subroutine genPtOnSpheroid(np,u,id)
-   
-    implicit none
-    
-    integer np,i,id
-    double precision u(:), mod
-  
-    mod=0.d0
-    do i=1,np
-       u(i)=gaussian1NS(id)
-       mod=mod+u(i)**2.
-    enddo
-    mod=1.d0/sqrt(mod)
-    u(:)=mod*u(:)
-    
-  end subroutine genPtOnSpheroid
-
-!----------------------------------------------------------------------  
-
   !calculate the mean, covariance matrix, inv covariance matrix, evalues,
   !evects, det(cov) & enlargement of a given point set
   subroutine CalcEllProp(npt,ndim,pt,mean,covmat,invcov,tMat,evec,eval,detcov, &
@@ -548,29 +529,6 @@ contains
 
 !----------------------------------------------------------------------
 
-  !generate a point uniformly on the surface of the given ellipsoid
-  subroutine genPtOnEll(ndim,mean,efac,TMat,id,pt)
-  	implicit none
-	
-	!input variables
-	integer ndim !dimensionality
-	double precision mean(ndim) !centroid of the given ellipsoid
-	double precision efac !enlargement factor of the given ellipsoid
-	double precision TMat(ndim,ndim) !transformation matrix of the given ellipsoid
-	integer id !processor id (for OpenMP)
-	!output variable
-	double precision pt(ndim)
-	!work variables
-	double precision u(1,ndim),pnewM(1,ndim)
-	
-	call genPtOnSpheroid(ndim,u(1,:),id)
-	pnewM=MatMul(u,TMat)
-	pt(:)=sqrt(efac)*pnewM(1,:)+mean(:)
-	
-  end subroutine genPtOnEll
-
-!----------------------------------------------------------------------
-   
    !evolve an ellipsoid from which a point has either been rejected or a point
    !has been inserted
   subroutine evolveEll(a_r,npt,ndim,newpt,pts,mean,eval,invcov,kfac,eff,vol,pVol)
