@@ -1034,30 +1034,4 @@ contains
   
 !----------------------------------------------------------------------
  
- subroutine ceffEvolve(ndim,vol,eff,npt)
- 	
-      implicit none
-      
-      !input variables
-      integer ndim
-      integer npt !no. of points in the mode
-      
-      !input/output variables
-      double precision vol !ellipsoid volume
-      double precision eff !enlargement
-      
-      !work variables
-      double precision d1
-      
-      if(eff>1d0) then
-      	d1=eff
-      	eff=max(1d0,eff*exp(-2d0/dble(npt*ndim)))
-      	vol=vol*((eff/d1)**(dble(ndim)/2d0))
-      endif
-      
-      
- end subroutine ceffEvolve
-  
-!----------------------------------------------------------------------
-
 end module utils1
