@@ -946,29 +946,6 @@ contains
 
 !----------------------------------------------------------------------
 
-  subroutine piksrt(n,n1,arr,arr1)
-  	integer n,n1
-  	double precision arr(n)
-  	double precision arr1(n1,n)
-  	integer i,j
-  	double precision a
-  	double precision a1(n1)
-  	do j=2,n
-     		a=arr(j)
-     		a1(1:n1)=arr1(1:n1,j)
-     		do i=j-1,1,-1
-        		if(arr(i).le.a) goto 10
-        			arr(i+1)=arr(i)
-				arr1(1:n1,i+1)=arr1(1:n1,i)
-     		end do
-     		i=0
-10     	arr(i+1)=a
-      	arr1(1:n1,i+1)=a1(1:n1)
-  	end do
-  	return
-  end subroutine piksrt
-
-!----------------------------------------------------------------------
   !calculation the multivariate normal function
   double precision function mNormalF(d,x,mu,C)
   	integer d !dimension
